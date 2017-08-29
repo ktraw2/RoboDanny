@@ -1,6 +1,6 @@
 ## R. Danny
 
-Forked version so I could implement custom code for a single server that the developer didn't want in the main version.
+Forked version so I could implement custom code for a single server that the developer didn't want in the main version. Please use the official version at https://github.com/Rapptz/RoboDanny
 
 ## Running
 

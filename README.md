@@ -1,10 +1,8 @@
 ## R. Danny
 
-A personal bot that runs on Discord.
+Forked version so I could implement custom code for a single server that the developer didn't want in the main version.
 
 ## Running
-
-I would prefer if you don't run an instance of my bot. Just call the join command with an invite URL to have it on your server. The source here is provided for educational purposes for discord.py.
 
 Nevertheless, the installation steps are as follows:
 

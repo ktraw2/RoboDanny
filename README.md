@@ -1,6 +1,6 @@
-## R. Danny
+## R. Danny (Forked Version)
 
-Forked version so I could implement custom code for a single server that the developer didn't want in the main version. Please use the official version at https://github.com/Rapptz/RoboDanny
+Forked version so I could implement custom code that is useful for a single server. Please use the official version at https://github.com/Rapptz/RoboDanny
 
 ## Running
 
@@ -42,6 +42,10 @@ bots_key = '' # your key on bots.discord.pw
 postgresql = 'postgresql://user:password@host/database' # your postgresql info from above
 challonge_api_key = '...' # for tournament cog
 ```
+
+6. **Configuration of database**
+
+To configure the PostgreSQL database for use by the bot, go to the directory where `launcher.py` is located, and run the script by doing `python3.6 launcher.py db init`
 
 ## Requirements
 

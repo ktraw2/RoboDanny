@@ -16,6 +16,7 @@ import weakref
 import re
 
 log = logging.getLogger(__name__)
+redstar_emote = '<:redstar:351432065620770826>'
 
 class StarError(commands.CheckFailure):
     pass
@@ -96,7 +97,7 @@ class Stars:
     """A starboard to upvote posts obviously.
 
     There are two ways to make use of this feature, the first is
-    via reactions, react to a message with \N{WHITE MEDIUM STAR} and
+    via reactions, react to a message with <:redstar:351432065620770826> and
     the bot will automatically add (or remove) it to the starboard.
 
     The second way is via Developer Mode. Enable it under Settings >
@@ -139,14 +140,15 @@ class Stars:
         return StarboardConfig(guild_id=guild_id, bot=self.bot, record=record)
 
     def star_emoji(self, stars):
-        if 5 > stars >= 0:
-            return '\N{WHITE MEDIUM STAR}'
-        elif 10 > stars >= 5:
-            return '\N{GLOWING STAR}'
-        elif 25 > stars >= 10:
-            return '\N{DIZZY SYMBOL}'
-        else:
-            return '\N{SPARKLES}'
+        # if 5 > stars >= 0:
+        #     return '\N{WHITE MEDIUM STAR}'
+        # elif 10 > stars >= 5:
+        #     return '\N{GLOWING STAR}'
+        # elif 25 > stars >= 10:
+        #     return '\N{DIZZY SYMBOL}'
+        # else:
+        #     return '\N{SPARKLES}'
+        return redstar_emote
 
     def star_gradient_colour(self, stars):
         # We define as 13 stars to be 100% of the star gradient (half of the 26 emoji threshold)
@@ -161,8 +163,8 @@ class Stars:
             p = 1.0
 
         red = 255
-        green = int((194 * p) + (253 * (1 - p)))
-        blue = int((12 * p) + (247 * (1 - p)))
+        green = int((1 * p) + (252 * (1 - p)))
+        blue = int((1 * p) + (253 * (1 - p)))
         return (red << 16) + (green << 8) + blue
 
     def get_emoji_message(self, message, stars):
@@ -211,7 +213,7 @@ class Stars:
                 return None
 
     async def reaction_action(self, fmt, emoji, message_id, channel_id, user_id):
-        if str(emoji) != '\N{WHITE MEDIUM STAR}':
+        if str(emoji) != redstar_emote:
             return
 
         channel = self.bot.get_channel(channel_id)
@@ -594,7 +596,7 @@ class Stars:
         click "Copy ID". You must have Developer Mode enabled to get that
         functionality.
 
-        It is recommended that you react to a message with \N{WHITE MEDIUM STAR} instead.
+        It is recommended that you react to a message with <:redstar:351432065620770826> instead.
 
         You can only star a message once.
         """
